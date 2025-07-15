@@ -1,6 +1,16 @@
 const adminTbl = require("../models/adminTbl")
 
 
+const login = async(req, res) => {
+    console.log(req.user)
+    if(req.user){
+        return res.redirect("/dashboard")
+    }
+    else{
+        return res.render("login")
+    }
+}
+
 const home = async (req, res) => {
     return res.render("home",{
         admin: req.currentUser
@@ -100,4 +110,6 @@ const updateAdmin = async (req,res) => {
 
 
 
-module.exports = {home, adminTable, adminForm, insertAdmin, editAdmin, updateAdmin}
+
+
+module.exports = {home, adminTable, adminForm, insertAdmin, editAdmin, updateAdmin, login}

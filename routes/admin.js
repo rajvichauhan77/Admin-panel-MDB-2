@@ -21,6 +21,8 @@ let avatarImage = multer({storage: uploadAvatar}).single("avatar")
 
 const adminControllers = require("../controllers/adminControllers")
 
+routes.get("/", adminControllers.login)
+
 routes.get("/dashboard", adminControllers.home)
 
 routes.get("/admin_table", adminControllers.adminTable)
