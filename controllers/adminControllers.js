@@ -11,6 +11,10 @@ const login = async(req, res) => {
     }
 }
 
+const signIn = async (req, res) => {
+            return res.redirect("/dashboard")
+}
+
 const home = async (req, res) => {
     return res.render("home",{
         admin: req.currentUser
@@ -112,4 +116,4 @@ const updateAdmin = async (req,res) => {
 
 
 
-module.exports = {home, adminTable, adminForm, insertAdmin, editAdmin, updateAdmin, login}
+module.exports = { login, signIn, home, adminTable, adminForm, insertAdmin, editAdmin, updateAdmin}
